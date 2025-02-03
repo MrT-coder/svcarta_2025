@@ -7,21 +7,20 @@
     <title>SAN VALENTÍN 2025</title>
 </head>
 <style>
+    h1 {
+        font-family: 'Great Vibes', cursive;
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        margin: 20px 0;
+        animation: fadeIn 2s ease-in-out;
+    }
 
-h1 {
-            font-family: 'Great Vibes', cursive;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-            margin: 20px 0;
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        h4 {
-            color: #fff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-            margin: 10px 0 30px;
-            animation: fadeIn 3s ease-in-out;
-        }
+    h4 {
+        color: #fff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        margin: 10px 0 30px;
+        animation: fadeIn 3s ease-in-out;
+    }
 
 
     .card {
@@ -102,12 +101,12 @@ h1 {
     body {
         background: linear-gradient(-45deg, #ff7e5f, #feb47b, #ff6f61, #ffcccb);
         background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+        animation: gradientBG 15s ease infinite;
     }
 
     body,
     html {
-        height: 135%;
+        height: 100%;
         margin: 0;
         display: flex;
         flex-direction: column;
@@ -159,7 +158,7 @@ h1 {
         opacity: 1;
     }
 
-    .card1__title { 
+    .card1__title {
         margin: 0;
         font-size: 24px;
         color: #333;
@@ -184,106 +183,152 @@ h1 {
         gap: 20px;
         padding: 20px;
     }
+
     .card1 img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
-    .card1 h2 {
-            font-size: 1.5rem;
-            color: #ff6f61;
-            margin-bottom: 10px;
-        }
 
-        .card1 p {
-            font-size: 1rem;
-            color: #4a4a4a;
-            line-height: 1.6;
-        }
+    .card1 h2 {
+        font-size: 1.5rem;
+        color: #ff6f61;
+        margin-bottom: 10px;
+    }
+
+    .card1 p {
+        font-size: 1rem;
+        color: #4a4a4a;
+        line-height: 1.6;
+    }
 
     @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+        0% {
+            opacity: 0;
         }
 
-        .heart {
-            position: absolute;
-            top: -20px;
-            animation: fall 5s linear infinite;
-            font-size: 2rem;
-            color: #ff6f61;
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .heart {
+        position: absolute;
+        top: -20px;
+        animation: fall 5s linear infinite;
+        font-size: 2rem;
+        color: #ff6f61;
+    }
+
+    @keyframes fall {
+        0% {
+            transform: translateY(-20px);
         }
 
-        @keyframes fall {
-            0% { transform: translateY(-20px); }
-            100% { transform: translateY(100vh); }
+        100% {
+            transform: translateY(100vh);
         }
+    }
+
     .hearts-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: -1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .hearts-container span {
+        position: absolute;
+        display: block;
+        animation: fall linear infinite;
+    }
+
+    .hearts-container span:nth-child(1) {
+        left: 10%;
+        animation-duration: 8s;
+    }
+
+    .hearts-container span:nth-child(2) {
+        left: 20%;
+        animation-duration: 10s;
+    }
+
+    .hearts-container span:nth-child(3) {
+        left: 30%;
+        animation-duration: 7s;
+    }
+
+    .hearts-container span:nth-child(4) {
+        left: 40%;
+        animation-duration: 9s;
+    }
+
+    .hearts-container span:nth-child(5) {
+        left: 50%;
+        animation-duration: 6s;
+    }
+
+    .hearts-container span:nth-child(6) {
+        left: 60%;
+        animation-duration: 8s;
+    }
+
+    .hearts-container span:nth-child(7) {
+        left: 70%;
+        animation-duration: 10s;
+    }
+
+    .hearts-container span:nth-child(8) {
+        left: 80%;
+        animation-duration: 7s;
+    }
+
+    .hearts-container span:nth-child(9) {
+        left: 90%;
+        animation-duration: 9s;
+    }
+
+    .hearts-container span:nth-child(10) {
+        left: 95%;
+        animation-duration: 6s;
+    }
+
+    /* Media Queries para hacer la página responsive */
+    @media screen and (max-width: 768px) {
+        .card-container {
+            grid-template-columns: 1fr;
+        }
+        iframe {
+            width: 90%;
         }
 
+        html {
+            height: 150%;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        h4 {
+            font-size: 1.2rem;
+            text-align: center;
+        }
         .hearts-container span {
-            position: absolute;
-            display: block;
-            animation: fall linear infinite;
+            font-size: 1.5rem;
         }
 
-        .hearts-container span:nth-child(1) {
-            left: 10%;
-            animation-duration: 8s;
+        html {
+            height: 150%;
         }
-
-        .hearts-container span:nth-child(2) {
-            left: 20%;
-            animation-duration: 10s;
-        }
-
-        .hearts-container span:nth-child(3) {
-            left: 30%;
-            animation-duration: 7s;
-        }
-
-        .hearts-container span:nth-child(4) {
-            left: 40%;
-            animation-duration: 9s;
-        }
-
-        .hearts-container span:nth-child(5) {
-            left: 50%;
-            animation-duration: 6s;
-        }
-
-        .hearts-container span:nth-child(6) {
-            left: 60%;
-            animation-duration: 8s;
-        }
-
-        .hearts-container span:nth-child(7) {
-            left: 70%;
-            animation-duration: 10s;
-        }
-
-        .hearts-container span:nth-child(8) {
-            left: 80%;
-            animation-duration: 7s;
-        }
-
-        .hearts-container span:nth-child(9) {
-            left: 90%;
-            animation-duration: 9s;
-        }
-
-        .hearts-container span:nth-child(10) {
-            left: 95%;
-            animation-duration: 6s;
-        }
+    }
 </style>
 
 <body>
@@ -300,19 +345,19 @@ h1 {
         <span class="heart">❤️</span>
     </div>
     <br><br><br><br><br><br><br><br>
-    <div class="main">
+    <!-- <div class="main">
         <div class="card" id="c1"><img src="/img/foto4.jpg" alt="Foto 1" /></div>
         <div class="card" id="c2"><img src="/img/foto1.jpg" alt="Foto 1" /></div>
         <div class="card" id="c3"><img src="/img/foto2.jpg" alt="Foto 1" /></div>
         <div class="card" id="c4"><img src="/img/foto3.jpg" alt="Foto 1" /></div>
 
-    </div>
+    </div> -->
     <h1>Un Valentín y un año más a la cuenta...</h1>
     <h4>Este año estuvo increible, y espero que los siguientes sigamos teniendo:</h4>
     <div class="card-container">
         <div class="card1">
             <svg viewBox="0 0 24 24">
-                <img src="/img/foto5.jpg" alt="Foto 1" />   
+                <img src="/img/foto5.jpg" alt="Foto 1" />
             </svg>
             <div class="card1__content">
                 <h2 class="card1__title">Viajes</h2>
@@ -323,29 +368,30 @@ h1 {
         </div>
         <div class="card1">
             <svg viewBox="0 0 24 24">
-                <img src="/img/foto7.jpg" alt="Foto 1" /> 
+                <img src="/img/foto7.jpg" alt="Foto 1" />
             </svg>
             <div class="card1__content">
                 <h2 class="card1__title">Momentos inolvidables</h2>
                 <p class="card1__description">
-                    De esos que se me quedan en la cabeza para siempre, y que me hacen sonreir cada vez que los recuerdo.
+                    De esos que se me quedan en la cabeza para siempre, y que me hacen sonreir cada vez que los
+                    recuerdo.
                 </p>
             </div>
         </div>
         <div class="card1">
             <svg viewBox="0 0 24 24">
-                <img src="/img/foto6.jpg" alt="Foto 1" /> 
+                <img src="/img/foto6.jpg" alt="Foto 1" />
             </svg>
             <div class="card1__content">
                 <h2 class="card1__title">Comida</h2>
                 <p class="card1__description">
-                    No nos vamos a mentir, es lo que más hacemos y de lo que más disfrutamos juntos.    
+                    No nos vamos a mentir, es lo que más hacemos y de lo que más disfrutamos juntos.
                 </p>
             </div>
         </div>
         <div class="card1">
             <svg viewBox="0 0 24 24">
-                <img src="/img/foto8.jpg" alt="Foto 1" /> 
+                <img src="/img/foto8.jpg" alt="Foto 1" />
             </svg>
             <div class="card1__content">
                 <h2 class="card1__title">Nuevas experiencias</h2>
@@ -356,7 +402,10 @@ h1 {
         </div>
     </div>
 
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5FgPwJ7Nh2FVmIXviKl2VF?utm_source=generator&theme=0" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/5FgPwJ7Nh2FVmIXviKl2VF?utm_source=generator&theme=0" width="80%"
+        height="152" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 </body>
 
