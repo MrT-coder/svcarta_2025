@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<style>
+
+h1 {
+            font-family: 'Great Vibes', cursive;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 20px 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        h4 {
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            margin: 10px 0 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+
+    .card {
+        width: 190px;
+        height: 254px;
+        background: rgba(211, 211, 211, 0.199);
+        position: absolute;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.3);
+    }
+
+    #c1 {
+        background-color: black;
+        transform: translateX(-200px) rotate(-40deg);
+    }
+
+    #c2 {
+        background-color: blue;
+        transform: translateX(-100px) rotate(-30deg);
+    }
+
+    #c3 {
+        background-color: red;
+        transform: translateX(0) rotate(-20deg);
+    }
+
+    #c4 {
+        background-color: green;
+        transform: translateX(100px) rotate(-10deg);
+    }
+
+    .main:hover #c1 {
+        transform: translateX(-200px) rotate(-40deg);
+    }
+
+    .main:hover #c2 {
+        transform: translateX(-100px) rotate(-30deg);
+    }
+
+    .main:hover #c3 {
+        transform: translateX(0) rotate(-20deg);
+    }
+
+    .main:hover #c4 {
+        transform: translateX(100px) rotate(-10deg);
+    }
+
+    #c1:hover {
+        transform: translateX(-300px) rotate(0deg) !important;
+    }
+
+    #c2:hover {
+        transform: translateX(-200px) rotate(0deg) !important;
+    }
+
+    #c3:hover {
+        transform: translateX(-100px) rotate(0deg) !important;
+    }
+
+    #c4:hover {
+        transform: translateX(150px) rotate(0deg) !important;
+    }
+
+    .main {
+        display: grid;
+        height: 50vmax;
+        place-items: center;
+        text-align: center;
+    }
+
+    .card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    body {
+        background: linear-gradient(-45deg, #ff7e5f, #feb47b, #ff6f61, #ffcccb);
+        background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+    }
+
+    body,
+    html {
+        height: 123%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .card1 {
+        position: relative;
+        width: 250px;
+        height: 200px;
+        background: linear-gradient(-45deg, #1f1b15 0%, #b50000 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .card1 svg {
+        width: 48px;
+        fill: #333;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .card1:hover {
+        transform: rotate(-5deg) scale(1.1);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .card1__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #fff;
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+    }
+
+    .card1:hover .card1__content {
+        transform: translate(-50%, -50%) rotate(0deg);
+        opacity: 1;
+    }
+
+    .card1__title { 
+        margin: 0;
+        font-size: 24px;
+        color: #333;
+        font-weight: 700;
+    }
+
+    .card1__description {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #777;
+        line-height: 1.4;
+    }
+
+    .card1:hover svg {
+        scale: 0;
+        transform: rotate(-45deg);
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    .card1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .card1 h2 {
+            font-size: 1.5rem;
+            color: #ff6f61;
+            margin-bottom: 10px;
+        }
+
+        .card1 p {
+            font-size: 1rem;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+    @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .heart {
+            position: absolute;
+            top: -20px;
+            animation: fall 5s linear infinite;
+            font-size: 2rem;
+            color: #ff6f61;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-20px); }
+            100% { transform: translateY(100vh); }
+        }
+    .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .hearts-container span {
+            position: absolute;
+            display: block;
+            animation: fall linear infinite;
+        }
+
+        .hearts-container span:nth-child(1) {
+            left: 10%;
+            animation-duration: 8s;
+        }
+
+        .hearts-container span:nth-child(2) {
+            left: 20%;
+            animation-duration: 10s;
+        }
+
+        .hearts-container span:nth-child(3) {
+            left: 30%;
+            animation-duration: 7s;
+        }
+
+        .hearts-container span:nth-child(4) {
+            left: 40%;
+            animation-duration: 9s;
+        }
+
+        .hearts-container span:nth-child(5) {
+            left: 50%;
+            animation-duration: 6s;
+        }
+
+        .hearts-container span:nth-child(6) {
+            left: 60%;
+            animation-duration: 8s;
+        }
+
+        .hearts-container span:nth-child(7) {
+            left: 70%;
+            animation-duration: 10s;
+        }
+
+        .hearts-container span:nth-child(8) {
+            left: 80%;
+            animation-duration: 7s;
+        }
+
+        .hearts-container span:nth-child(9) {
+            left: 90%;
+            animation-duration: 9s;
+        }
+
+        .hearts-container span:nth-child(10) {
+            left: 95%;
+            animation-duration: 6s;
+        }
+</style>
+
+<body>
+    <div class="hearts-container">
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+        <span class="heart">❤️</span>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="main">
+        <div class="card" id="c1"><img src="/img/foto4.jpg" alt="Foto 1" /></div>
+        <div class="card" id="c2"><img src="/img/foto1.jpg" alt="Foto 1" /></div>
+        <div class="card" id="c3"><img src="/img/foto2.jpg" alt="Foto 1" /></div>
+        <div class="card" id="c4"><img src="/img/foto3.jpg" alt="Foto 1" /></div>
+
+    </div>
+    <h1>Un Valentín y un año más a la cuenta...</h1>
+    <h4>Este año estuvo increible, y espero que los siguientes sigamos teniendo:</h4>
+    <div class="card-container">
+        <div class="card1">
+            <svg viewBox="0 0 24 24">
+                <img src="/img/foto5.jpg" alt="Foto 1" />   
+            </svg>
+            <div class="card1__content">
+                <h2 class="card1__title">Viajes</h2>
+                <p class="card1__description">
+                    Para poder estar contigo en lugares tan increibles como lo eres tu. Ya sea con o sin permiso.
+                </p>
+            </div>
+        </div>
+        <div class="card1">
+            <svg viewBox="0 0 24 24">
+                <img src="/img/foto7.jpg" alt="Foto 1" /> 
+            </svg>
+            <div class="card1__content">
+                <h2 class="card1__title">Momentos inolvidables</h2>
+                <p class="card1__description">
+                    De esos que se me quedan en la cabeza para siempre, y que me hacen sonreir cada vez que los recuerdo.
+                </p>
+            </div>
+        </div>
+        <div class="card1">
+            <svg viewBox="0 0 24 24">
+                <img src="/img/foto6.jpg" alt="Foto 1" /> 
+            </svg>
+            <div class="card1__content">
+                <h2 class="card1__title">Comida</h2>
+                <p class="card1__description">
+                    No nos vamos a mentir, es lo que más hacemos y de lo que más disfrutamos juntos.    
+                </p>
+            </div>
+        </div>
+        <div class="card1">
+            <svg viewBox="0 0 24 24">
+                <img src="/img/foto8.jpg" alt="Foto 1" /> 
+            </svg>
+            <div class="card1__content">
+                <h2 class="card1__title">Nuevas experiencias</h2>
+                <p class="card1__description">
+                    Porque siempre se nos ocurre algo nuevo que hacer, y ninguna me imagino sin estar a tu lado.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/5FgPwJ7Nh2FVmIXviKl2VF?utm_source=generator&theme=0" width="80%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+</body>
+
+
+</html>
